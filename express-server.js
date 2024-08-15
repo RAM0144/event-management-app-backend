@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import dotenv from "dotenv";
 import connectViaMongoose from "./DB-Utils/mongoose.js";
 import registerRouter from "./Routes/register.js";
 import loginRouter from "./Routes/login.js";
@@ -30,6 +31,8 @@ const loger = (req, res, next) => {
 }
 
 server.use(loger);
+
+dotenv.config();
 
 // connecting to db before server Starts
 // Top level await

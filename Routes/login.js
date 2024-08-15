@@ -30,7 +30,7 @@ loginRouter.post("/", async (req, res) => {
         const authToken = jwt.sign(userObj, process.env.JWT_SECRET,
             { expiresIn: process.env.EXPIRY_TIME });
 
-        res.status(200).json({ msg: "Login successful", userToken: authToken });
+        res.send({ msg: "Login successful", userToken: authToken });
 
     } catch (error) {
         console.log("Error", error);
